@@ -1,0 +1,6 @@
+gradio>=4.0
+Pillow>=10.0
+numpy<2.0
+# 可选（推荐用于更好主体分离效果，类似 iOS 主体检测）:
+# rembg[cpu]>=2.0   # 取消注释并 pip install 后可获得显著更好的主体抠图
+# opencv-python-headless  # 如需更强边缘/特征

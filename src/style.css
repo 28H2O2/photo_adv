@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iOS 风格的一些全局微调 */
+:root {
+  --ios-blue: #007aff;
+}
+
+.iphone-frame {
+  background: #111;
+  border: 12px solid #222;
+  border-radius: 68px;
+  box-shadow: 
+    0 0 0 1px #333,
+    0 25px 50px -12px rgb(0 0 0 / 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.iphone-frame::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 28px;
+  background: #111;
+  border-radius: 20px;
+  z-index: 20;
+}
+
+/* 动态岛 / 刘海 */
+.dynamic-island {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 32px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #666;
+}
+
+.lock-canvas {
+  display: block;
+  background: #000;
+  touch-action: none;
+  cursor: grab;
+}
+
+.lock-canvas:active {
+  cursor: grabbing;
+}
+
+.preset-card {
+  transition: all 0.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.preset-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.preset-card.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
